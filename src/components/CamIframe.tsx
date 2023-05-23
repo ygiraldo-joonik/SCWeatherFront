@@ -60,7 +60,7 @@ function CamIframe({ port = 8010 }) {
 
           setTimeout(() => {
             getPageContent(true);
-          }, 600000); // 10 minutes
+          },!newImage ?  1000 : 600000 ); // 10 minutes
         }
       };
 

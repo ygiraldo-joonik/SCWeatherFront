@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useState } from 'react';
 import { User } from '../types/credential';
 import { Cam } from '../types/cams';
+import Storage from '../utils/storage';
 
 interface CamState {
   cam? : Cam
@@ -19,7 +20,12 @@ const initialState : CamContextValue = {
 const CamContext = createContext<CamContextValue>(initialState);
 
 const CamContextProvider = ({ children }) => {
-  const [cam,setCam] = useState<Cam|null>(null);
+  const [cam,_setCam] = useState<Cam|null>(null);
+
+  const setCam = (cam:Cam)=>{
+    _setCam(cam)
+    Storage.setValue("CAM",cam)
+  }
   return (
     <CamContext.Provider value={{cam,setCam}}>
       {children}

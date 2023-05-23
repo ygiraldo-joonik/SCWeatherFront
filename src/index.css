@@ -3,3 +3,7 @@
 html{
     font-family: 'Heebo', sans-serif;
 }
+
+.MuiAlert-message{
+    overflow: hidden !important;
+}

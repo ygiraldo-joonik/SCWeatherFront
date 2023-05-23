@@ -9,7 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import GuestGuard from "./components/guards/GuestGuard";
 import AuthGuard from "./components/guards/AuthGuard";
-import CamIframe from "./pages/CamIframe";
+import CamIframe from "./components/CamIframe";
 
 const router = createBrowserRouter([
   {

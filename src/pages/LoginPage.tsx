@@ -9,7 +9,9 @@ import {
   Stack,
   Alert,
   CircularProgress,
+  Paper,
 } from "@mui/material";
+import logo from "../assets/logo.png";
 import PersonIcon from "@mui/icons-material/Person";
 import useLogin from "../hooks/useLogin";
 
@@ -44,11 +46,13 @@ const LoginPage = () => {
             alignItems: "center",
           }}
         >
+          <Paper sx={{p:3}}>
+
           <Stack gap={4} sx={{
             width:"100%"
           }}>
             <Typography variant="h3" sx={{ textAlign: "center", fontWeight:"bold" }}>
-            SCWeather
+            <img src={logo} width="60%" />
             </Typography>
             <Typography variant="h5" sx={{ textAlign: "center" }}>
               Login
@@ -76,6 +80,8 @@ const LoginPage = () => {
               Login
             </Button>
           </Stack>
+          </Paper>
+
         </Container>
       </Box>
     </Container>

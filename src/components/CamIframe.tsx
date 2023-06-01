@@ -6,7 +6,7 @@ import axios from "axios";
 import { ContactSupportOutlined } from "@mui/icons-material";
 import Storage from "../utils/storage";
 
-function CamIframe({ port = 8010 }) {
+function CamIframe() {
   const [abortController, setAbortController] = useState<AbortController>(null);
   const [loadedPorts, setLoadedPorts] = useState<number[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -60,7 +60,7 @@ function CamIframe({ port = 8010 }) {
 
           setTimeout(() => {
             getPageContent(true);
-          },!newImage ?  1000 : 600000 ); // 10 minutes
+          },!newImage ?  1 : 600000 ); // 10 minutes
         }
       };
 
@@ -84,7 +84,7 @@ function CamIframe({ port = 8010 }) {
 
   return (
     <>
-      <Typography textAlign="right">{cam?.name}</Typography>
+      <Typography textAlign="right" sx={{mt:-2}}>{cam?.name}</Typography>
       <Box
         sx={{
           position: "relative",
@@ -110,6 +110,8 @@ function CamIframe({ port = 8010 }) {
             style={{
               width: "100%",
               height: "auto",
+              maxHeight:"100vh",
+              maxWidth:"100vw"
             }}
           />
         )}
